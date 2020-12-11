@@ -1,8 +1,8 @@
 server:
     port: 8081
-spring:
-    data:
-        elasticsearch:
-            cluster-name: myelasticsearch
-            cluster-nodes: 192.168.18.33:9300
+#spring:
+#    data:
+#        elasticsearch:
+#            cluster-name: myelasticsearch
+#            cluster-nodes: 192.168.18.33:9300
 
