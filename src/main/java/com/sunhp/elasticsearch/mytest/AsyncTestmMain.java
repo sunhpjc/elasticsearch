@@ -48,7 +48,7 @@ public class AsyncTestmMain {
     @Resource
     private AsyncInterfaceFive asyncInterfaceFive;
 
-    @Scheduled(cron = "0/5 * * * * ?")
+//    @Scheduled(cron = "0/5 * * * * ?")
     public void asyncTest(){
         List<String> list = new ArrayList<>();
         list.add("async1");

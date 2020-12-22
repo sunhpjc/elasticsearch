@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.sunhp.elasticsearch.guava.mapper.CourseMapper">
+    <resultMap id="BaseResultMap" type="com.sunhp.elasticsearch.guava.entity.Course">
+        <id column="id" jdbcType="INTEGER" property="id"/>
+        <result column="course_id" jdbcType="VARCHAR" property="courseId"/>
+        <result column="course_name" jdbcType="VARCHAR" property="courseName"/>
+        <result column="course_teacher" jdbcType="VARCHAR" property="courseTeacher"/>
+        <result column="course_number" jdbcType="VARCHAR" property="courseNumber"/>
+    </resultMap>
+    <sql id="baseSql">
+        id,course_id,course_name,course_teacher,course_number
+    </sql>
+
+    <select id="selectCourse" resultMap="BaseResultMap">
+        select
+        <include refid="baseSql"></include>
+        from course
+    </select>
+</mapper>

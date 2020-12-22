@@ -6,3 +6,29 @@ server:
 #            cluster-name: myelasticsearch
 #            cluster-nodes: 192.168.18.33:9300
 
+spring:
+    datasource:
+        username: root
+        password: 123456
+        url: jdbc:mysql://localhost:3306/springboot?useUnicode=true&characterEncoding=utf-8&useSSL=true&serverTimezone=UTC
+        driver-class-name: com.mysql.jdbc.Driver
+        type: com.alibaba.druid.pool.DruidDataSource
+        #其它配置
+        initialSize: 5
+        minIdle: 5
+        maxActive: 20
+        maxWait: 60000
+        timeBetweenEvictionRunsMillis: 60000
+        minEvictableIdleTimeMillis: 300000
+        validationQuery: SELECT 1 FROM DUAL
+        testWhileIdle: true
+        testOnBorrow: false
+        testOnReturn: false
+        #配置监控统计拦截的filters,去掉后监控界面的sql无法统计，还可以设置参数wall用于防火墙，log4j
+        filters: stat,wall
+        maxPoolPreparedStatementPerConnectionSize: 20
+        useGlobalDataSourceStat: true
+        connectionProperties: druid.stat.mergeSql=true;druid.stat.slowSqlMillis=5000
+mybatis:
+    mapper-locations: classpath:mapping/*Mapper.xml
+    type-aliases-package: com.sunhp.elasticsearch.guava.entity
